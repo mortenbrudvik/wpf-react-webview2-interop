@@ -3,8 +3,8 @@
     removeEventListener(type: string, listener: (event: MessageEvent<any>) => void): void;
     postMessage(message: any): void;
     hostObjects: {
-        apiBridge: {
-            invoke(service: string, method: string, jsonParams: string): Promise<string>;
+        apibridge: {
+            Invoke(service: string, method: string, jsonParams: string): Promise<string>;
         };
     };
 }

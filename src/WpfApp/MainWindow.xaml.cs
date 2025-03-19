@@ -19,7 +19,7 @@ public partial class MainWindow
         _handler = new WebviewHandler(WebBrowser,  "http://localhost:5174/", tempPath)
         {
             HostObject = bridge,
-            HostObjectName = "apiBridge"
+            HostObjectName = "apibridge"
         };
     }
 }

@@ -17,6 +17,7 @@ export function useUsers() {
         const fetchUsers = async () => {
             try {
                 setLoading(true);
+                console.log("Fetching users...");
                 const userList = await apiClient.call<User[]>("userService", "getUsers");
                 setUsers(userList);
             } catch (err) {

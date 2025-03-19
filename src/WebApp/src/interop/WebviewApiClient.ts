@@ -20,10 +20,12 @@ export class WebViewApiClient {
 
     async call<T>(service: string, method: string, params: any = {}): Promise<T> {
         const jsonParams = JSON.stringify(params);
-        if (!window.chrome?.webview?.hostObjects?.apiBridge) {
+        if (!window.chrome?.webview?.hostObjects?.apibridge) {
             throw new Error("WebView2 API bridge not available");
         }
-        const result = await window.chrome.webview.hostObjects.apiBridge.invoke(service, method, jsonParams);
+        console.log(service);
+        const result = await window.chrome.webview.hostObjects.apibridge.Invoke(service, method, jsonParams);
+        console.log(result);
         return JSON.parse(result) as T;
     }
 
