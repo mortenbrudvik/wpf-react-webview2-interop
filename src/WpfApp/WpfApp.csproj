@@ -12,4 +12,8 @@
     <ProjectReference Include="..\WebView\WebView.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.3.0" />
+  </ItemGroup>
+
 </Project>

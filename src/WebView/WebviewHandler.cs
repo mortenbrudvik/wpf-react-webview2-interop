@@ -14,11 +14,16 @@ public class WebviewHandler
 
         WebView.Dispatcher.Invoke((Action)(() => InitializeAsync().FireAndForget()), DispatcherPriority.Loaded);
     }
+    
+    public Action InitializeComplete { get; set; } 
 
     public WebView2 WebView { get; private set; }
     public string InitialUrl { get; }
     public string? EnvironmentFolderPath { get; private set; }
-    public bool IsInitialized { get; private set; }
+    public bool IsInitialized { get; set; }
+    
+    public string HostObjectName { get; init; } = "webview";
+    public object? HostObject { get; init; } = null;
 
     public virtual void Navigate(string url, bool forceRefresh = false)
     {
@@ -34,7 +39,18 @@ public class WebviewHandler
                 AllowSingleSignOnUsingOSPrimaryAccount = true
             });
         await WebView.EnsureCoreWebView2Async(environment);
-
+        
+        InitializeComplete?.Invoke();
+        IsInitialized = true;
+        
+        if (HostObject != null)
+        {
+            await WebView.Dispatcher.InvokeAsync(() =>
+            {
+                WebView.CoreWebView2.AddHostObjectToScript(HostObjectName, HostObject);
+            });
+        }
+        
         if (!string.IsNullOrEmpty(InitialUrl))
         {
             Navigate(InitialUrl);
