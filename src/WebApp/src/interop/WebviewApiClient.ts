@@ -1,5 +1,4 @@
-﻿// webviewApiClient.ts
-interface WebViewMessage {
+﻿interface WebViewMessage {
     EventName: string;
     Data: any;
 }
