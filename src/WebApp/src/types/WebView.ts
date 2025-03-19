@@ -4,7 +4,7 @@
     postMessage(message: any): void;
     hostObjects: {
         apibridge: {
-            Invoke(service: string, method: string, jsonParams: string): Promise<string>;
+            InvokeMethod(service: string, method: string, jsonParams: string): Promise<string>;
         };
     };
 }

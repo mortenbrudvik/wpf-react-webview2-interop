@@ -23,9 +23,9 @@ export class WebViewApiClient {
         if (!window.chrome?.webview?.hostObjects?.apibridge) {
             throw new Error("WebView2 API bridge not available");
         }
-        console.log(service);
-        const result = await window.chrome.webview.hostObjects.apibridge.Invoke(service, method, jsonParams);
-        console.log(result);
+        console.log("service: " + service);
+        const result = await window.chrome?.webview?.hostObjects?.apibridge.InvokeMethod(service, method, jsonParams);
+        console.log("result: " + result);
         return JSON.parse(result) as T;
     }
 
