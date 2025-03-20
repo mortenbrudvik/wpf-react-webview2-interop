@@ -13,11 +13,5 @@ public partial class MainWindow
         DataContext = viewModel;
         InitializeComponent();
 
-        var tempPath =  Path.Combine(Path.GetTempPath(), "WpfWebview2Interop");
-        _handler = new WebviewHandler(viewModel.WebView,  "http://localhost:5174/", tempPath)
-        {
-            HostObject = bridge,
-            HostObjectName = "apibridge"
-        };
     }
 }
