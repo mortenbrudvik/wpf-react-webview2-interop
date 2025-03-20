@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite --port 5223",
     "build": "tsc -b && vite build",
-    "build-copy": "tsc -b && vite build && node copy-files.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
