@@ -1,25 +1,24 @@
-﻿using AppUI.Users;
-using AppUI.WebApi;
-using Autofac;
+﻿using Autofac;
 using WebView;
+using WpfReactApp.UI.Users;
+using WpfReactApp.UI.WebApi;
 
-namespace AppUI;
+namespace WpfReactApp.UI;
 
 public class WpfAppModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
-        // Register MediatR and scan the assembly containing handlers
-
-        // Register other dependencies
-        builder.RegisterType<WebViewApiBridge>().SingleInstance();
-        //   builder.RegisterType<EventAggregator>().SingleInstance();
-        
         // WebView
-        builder.RegisterType<WebView.WebViewControl>()
+        builder.RegisterType<WebViewControl>()
             .AsSelf()
             .As<IWebViewInterop>()
             .InstancePerDependency();
+
+        // WebView Bridge
+        builder.RegisterType<WebViewApiBridge>().SingleInstance();
+        builder.RegisterType<EventAggregator>().SingleInstance();
+
         
         // Services
         builder.RegisterType<UserService>().AsSelf();

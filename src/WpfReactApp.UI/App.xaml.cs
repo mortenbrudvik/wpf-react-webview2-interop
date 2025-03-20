@@ -1,12 +1,9 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
-using AppUI.Users;
-using AppUI.WebApi;
+﻿using System.Windows;
 using Autofac;
-using WebView;
+using WpfReactApp.UI.Users;
+using WpfReactApp.UI.WebApi;
 
-namespace AppUI;
+namespace WpfReactApp.UI;
 
 /// <summary>
 /// Interaction logic for App.xaml

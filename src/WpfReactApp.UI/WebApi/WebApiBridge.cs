@@ -1,7 +1,8 @@
 ﻿using System.Text.Json;
+using Common;
 using MediatR;
 
-namespace AppUI.WebApi;
+namespace WpfReactApp.UI.WebApi;
 
 // Bridge class to handle API calls from web client.
 public class WebViewApiBridge(IMediator mediator)
@@ -17,16 +18,6 @@ public class WebViewApiBridge(IMediator mediator)
         
         var result = await mediator.Send(request);
 
-        return ConvertToCamelCaseJson(result);
-    }
-
-    private string ConvertToCamelCaseJson(object? dataObj)
-    {
-        JsonSerializerOptions options = new()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase, // Ensures camelCase for property names
-            PropertyNameCaseInsensitive = true // Optional: allows case-insensitive deserialization
-        };
-        return JsonSerializer.Serialize(dataObj, options);
+        return JsonUtils.Serialize(result);
     }
 }

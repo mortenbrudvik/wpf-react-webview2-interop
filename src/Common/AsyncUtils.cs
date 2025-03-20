@@ -1,4 +1,4 @@
-﻿namespace WebView;
+﻿namespace Common;
 
 public static class AsyncUtils
 {

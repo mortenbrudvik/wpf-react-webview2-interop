@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfReactApp.UI", "src\WpfRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView", "src\WebView\WebView.csproj", "{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common.csproj", "{C6CD8C59-B463-4E5F-8909-8279F7A2420E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,18 @@ Global
 		{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16}.Release|x64.Build.0 = Release|Any CPU
 		{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16}.Release|x86.ActiveCfg = Release|Any CPU
 		{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16}.Release|x86.Build.0 = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|x64.Build.0 = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Debug|x86.Build.0 = Debug|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|x64.ActiveCfg = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|x64.Build.0 = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +64,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1DC789C0-9A10-40ED-BAFE-404C766686C2} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{C6CD8C59-B463-4E5F-8909-8279F7A2420E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal

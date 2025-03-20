@@ -1,8 +1,8 @@
-﻿using AppUI.WebApi;
-using WebView;
+﻿using WebView;
+using WpfReactApp.UI.WebApi;
 using Path = System.IO.Path;
 
-namespace AppUI;
+namespace WpfReactApp.UI;
 
 public partial class MainWindow
 {

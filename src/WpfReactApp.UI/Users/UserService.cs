@@ -1,4 +1,4 @@
-namespace AppUI.Users;
+namespace WpfReactApp.UI.Users;
 
 public class UserService
 {

@@ -1,4 +1,4 @@
-namespace AppUI.WebApi;
+namespace WpfReactApp.UI.WebApi;
 
 public static class ApiRegistry
 {
