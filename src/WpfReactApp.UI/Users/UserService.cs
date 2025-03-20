@@ -1,25 +1,26 @@
-using WpfReactApp.UI.WebApi;
+using MediatR;
 
 namespace WpfReactApp.UI.Users;
 
-public class UserService(EventAggregator eventAggregator)
+public class UserService(IMediator mediator)
 {
     private readonly List<User> _users = [];
+
     public List<User> GetUsers() => _users;
 
-    public void AddUser(User user)
+    public async Task AddUser(User user)
     {
         _users.Add(user);
-        eventAggregator.Publish("userService.userAdded", user);
+        await mediator.Publish(new UserAddedNotification(user));
     }
 
-    public void RemoveUser(string userId)
+    public async Task RemoveUser(string userId)
     {
         var user = _users.FirstOrDefault(u => u.Id == userId);
         if (user != null)
         {
             _users.Remove(user);
-            eventAggregator.Publish("userService.userRemoved", userId);
+            await mediator.Publish(new UserRemovedNotification(userId));
         }
     }
 }
