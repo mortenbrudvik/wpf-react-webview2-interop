@@ -8,7 +8,7 @@ public class UserRemovedNotification(string userId) : INotification
     public string UserId { get; } = userId;
 }
 
-public class UserRemovedEventHandler(EventAggregator eventAggregator) : INotificationHandler<UserRemovedNotification>
+public class UserRemovedEventHandler(WebViewEventAggregator eventAggregator) : INotificationHandler<UserRemovedNotification>
 {
     public Task Handle(UserRemovedNotification notification, CancellationToken cancellationToken)
     {

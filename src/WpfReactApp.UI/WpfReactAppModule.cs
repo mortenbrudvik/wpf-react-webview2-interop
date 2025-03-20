@@ -17,7 +17,7 @@ public class WpfReactAppModule : Module
 
         // WebView Bridge
         builder.RegisterType<WebViewApiBridge>().SingleInstance();
-        builder.RegisterType<EventAggregator>().SingleInstance();
+        builder.RegisterType<WebViewEventAggregator>().SingleInstance();
         
         // Services
         builder.RegisterType<UserService>().AsSelf().SingleInstance();

@@ -9,7 +9,7 @@ public class WebViewApiBridge(IMediator mediator)
 {
     public async Task<string> InvokeMethod(string serviceName, string methodName, string jsonParams)
     {
-        var requestType = ApiRegistry.GetRequestType(serviceName, methodName);
+        var requestType = WebViewApiRegistry.GetRequestType(serviceName, methodName);
         if (requestType == null) throw new Exception($"Unknown API: {serviceName}.{methodName}");
         
         var request = JsonSerializer.Deserialize(jsonParams, requestType);

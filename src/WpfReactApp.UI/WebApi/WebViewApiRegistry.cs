@@ -1,6 +1,6 @@
 namespace WpfReactApp.UI.WebApi;
 
-public static class ApiRegistry
+public static class WebViewApiRegistry
 {
     private static readonly Dictionary<string, Type> Requests = new();
 

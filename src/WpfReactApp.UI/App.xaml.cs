@@ -20,7 +20,7 @@ public partial class App : Application
         userService.AddUser(UserGenerator.Create());
         userService.AddUser(UserGenerator.Create());
         
-        ApiRegistry.Register<GetUsersRequest>("userService", "getUsers");
+        WebViewApiRegistry.Register<GetUsersRequest>("userService", "getUsers");
         
         // Create and show main window
         var scope = _container.BeginLifetimeScope();
