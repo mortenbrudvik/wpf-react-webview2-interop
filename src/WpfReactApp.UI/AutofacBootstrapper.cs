@@ -11,12 +11,12 @@ public class AutofacBootstrapper
         var builder = new ContainerBuilder();
 
         var configuration = MediatRConfigurationBuilder
-            .Create(typeof(WpfAppModule).Assembly)
+            .Create(typeof(WpfReactAppModule).Assembly)
             .WithAllOpenGenericHandlerTypesRegistered()
             .Build();
 
         builder.RegisterMediatR(configuration);
-        builder.RegisterModule<WpfAppModule>();
+        builder.RegisterModule<WpfReactAppModule>();
         
 
         return builder.Build();

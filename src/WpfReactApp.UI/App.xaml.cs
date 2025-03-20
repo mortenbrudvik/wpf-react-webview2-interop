@@ -5,9 +5,6 @@ using WpfReactApp.UI.WebApi;
 
 namespace WpfReactApp.UI;
 
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
 public partial class App : Application
 {
     private IContainer _container;

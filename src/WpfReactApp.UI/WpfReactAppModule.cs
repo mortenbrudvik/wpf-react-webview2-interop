@@ -5,7 +5,7 @@ using WpfReactApp.UI.WebApi;
 
 namespace WpfReactApp.UI;
 
-public class WpfAppModule : Module
+public class WpfReactAppModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
