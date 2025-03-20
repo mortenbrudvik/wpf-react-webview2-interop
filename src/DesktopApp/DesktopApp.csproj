@@ -23,6 +23,10 @@
     <Exec Command="xcopy &quot;$(SolutionDir)src\WebApp\dist\*.*&quot; &quot;$(TargetDir)Assets\&quot; /Y /D" />
   </Target>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd &quot;C:\code\templates\wpf-react-webview2-interop\src\WebApp&quot;&#xA;npm run build" />
+  </Target>
+
 <!--  <ItemGroup>-->
 <!--    <None Update="Assets\index.css">-->
 <!--      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->

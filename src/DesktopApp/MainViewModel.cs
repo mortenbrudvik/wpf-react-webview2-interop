@@ -17,7 +17,7 @@ public partial class MainViewModel : ObservableObject
     {
         _userService = userService;
         WebView = webview;
-
+ 
         //var url = "http://localhost:5174/";
         var hostWebHostNameForFolder = "webapp";
         var url = "https://webapp/index.html";
