@@ -4,9 +4,6 @@ import {useUsers} from "./users/useUsers.ts";
 function App() {
 
     const {users} = useUsers();
-
-    console.log("Users");
-    console.log(users);
     
     return (
         <>

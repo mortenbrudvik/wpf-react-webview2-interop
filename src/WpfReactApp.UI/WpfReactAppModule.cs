@@ -13,7 +13,7 @@ public class WpfReactAppModule : Module
         builder.RegisterType<WebViewControl>()
             .AsSelf()
             .As<IWebViewInterop>()
-            .InstancePerDependency();
+            .SingleInstance();
 
         // WebView Bridge
         builder.RegisterType<WebViewApiBridge>().SingleInstance();

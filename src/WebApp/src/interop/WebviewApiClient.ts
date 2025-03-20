@@ -1,17 +1,20 @@
 ﻿interface WebViewMessage {
-    EventName: string;
-    Data: any;
+    eventName: string;
+    data: any;
 }
 
 export class WebViewApiClient {
     private listeners: { [eventName: string]: ((data: any) => void)[] } = {};
 
     constructor() {
-        // Ensure WebView2 is available
         if (window?.chrome?.webview) {
             window.chrome.webview.addEventListener("message", (event: MessageEvent<WebViewMessage>) => {
-                const { EventName, Data } = event.data;
-                this.listeners[EventName]?.forEach((callback) => callback(Data));
+                const { eventName, data } = event.data;
+                console.debug("Raw event.data:", JSON.stringify(event.data));
+                this.listeners[eventName]?.forEach((callback) => {
+                    console.debug(`Calling callbacks for ${eventName} with data: ${JSON.stringify(data)}`);
+                    callback(data);
+                });
             });
         } else {
             console.warn("WebView2 not available");
@@ -24,11 +27,12 @@ export class WebViewApiClient {
             throw new Error("WebView2 API bridge not available");
         }
         const result = await window.chrome?.webview?.hostObjects?.apibridge.InvokeMethod(service, method, jsonParams);
-        console.log(`WebView2 API bridge returned: ${result}`)
+        console.debug(`WebView2 API bridge returned: ${result}`)
         return JSON.parse(result) as T;
     }
 
     on(eventName: string, callback: (data: any) => void): () => void {
+        console.debug(`Subscribing to event '${eventName}' with callback: ${callback.toString()}`)
         if (!this.listeners[eventName]) this.listeners[eventName] = [];
         this.listeners[eventName].push(callback);
 

@@ -1,9 +1,7 @@
 ﻿// hooks/useUsers.ts
 import { useState, useEffect } from "react";
 import { apiClient } from "../interop/WebviewApiClient";
-import {User} from "../types/User.ts";
-
-
+import { User } from "../types/User.ts";
 
 export function useUsers() {
     const [users, setUsers] = useState<User[]>([]);
@@ -11,7 +9,6 @@ export function useUsers() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        // Fetch initial users
         const fetchUsers = async () => {
             try {
                 setLoading(true);
@@ -28,21 +25,21 @@ export function useUsers() {
 
         fetchUsers();
 
-        // Subscribe to events
         const unsubscribeAdded = apiClient.on("userService.userAdded", (newUser: User) => {
+            console.log("User added:", newUser);
             setUsers((prev) => [...prev, newUser]);
         });
 
-        const unsubscribeRemoved = apiClient.on("userService.userRemoved", (userId: number) => {
+        const unsubscribeRemoved = apiClient.on("userService.userRemoved", (userId: string) => {
+            console.log("User removed with id:", userId);
             setUsers((prev) => prev.filter((user) => user.id !== userId));
         });
 
-        // Cleanup subscriptions on unmount
         return () => {
             unsubscribeAdded();
             unsubscribeRemoved();
         };
-    }, []); // Empty dependency array: runs once on mount
+    }, []);
 
     return { users, loading, error };
 }
