@@ -1,9 +1,8 @@
 ﻿using Common;
-using WebView;
 
-namespace WpfReactApp.UI.WebApi;
+namespace WebView.Interop;
 
-public class WebViewEventAggregator(IWebViewInterop webViewInterop)
+public class ApiEventAggregator(IWebViewInterop webViewInterop)
 {
     public void Publish(string eventName, object data)
     {

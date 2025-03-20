@@ -3,9 +3,9 @@ using Bogus;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using WebView;
+using WebView.Interop;
 using WpfReactApp.UI.Common;
 using WpfReactApp.UI.Users;
-using WpfReactApp.UI.WebApi;
 
 namespace WpfReactApp.UI;
 
@@ -14,7 +14,7 @@ public partial class MainViewModel : ObservableObject
     private readonly UserService _userService;
     private readonly WebviewHandler _handler;
 
-    public MainViewModel(WebViewControl webview, WebViewApiBridge bridge, UserService userService)
+    public MainViewModel(WebViewControl webview, ApiBridge bridge, UserService userService)
     {
         _userService = userService;
         WebView = webview;

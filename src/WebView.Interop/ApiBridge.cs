@@ -2,14 +2,14 @@
 using Common;
 using MediatR;
 
-namespace WpfReactApp.UI.WebApi;
+namespace WebView.Interop;
 
 // Bridge class to handle API calls from web client.
-public class WebViewApiBridge(IMediator mediator)
+public class ApiBridge(IMediator mediator, ApiRegistry apiRegistry)
 {
     public async Task<string> InvokeMethod(string serviceName, string methodName, string jsonParams)
     {
-        var requestType = WebViewApiRegistry.GetRequestType(serviceName, methodName);
+        var requestType = apiRegistry.GetRequestType(serviceName, methodName);
         if (requestType == null) throw new Exception($"Unknown API: {serviceName}.{methodName}");
         
         var request = JsonSerializer.Deserialize(jsonParams, requestType);

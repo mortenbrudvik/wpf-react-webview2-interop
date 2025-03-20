@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using Autofac;
+using WebView.Interop;
 using WpfReactApp.UI.Common;
 using WpfReactApp.UI.Users;
-using WpfReactApp.UI.WebApi;
 
 namespace WpfReactApp.UI;
 
@@ -19,8 +19,10 @@ public partial class App : Application
         var userService = _container.Resolve<UserService>();
         userService.AddUser(UserGenerator.Create());
         userService.AddUser(UserGenerator.Create());
-        
-        WebViewApiRegistry.Register<GetUsersRequest>("userService", "getUsers");
+
+        // Register API
+        var registry = _container.Resolve<ApiRegistry>();
+        registry.Register<GetUsersRequest>("userService", "getUsers");
         
         // Create and show main window
         var scope = _container.BeginLifetimeScope();

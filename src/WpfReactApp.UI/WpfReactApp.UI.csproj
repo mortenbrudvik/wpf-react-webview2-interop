@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebView.Interop\WebView.Interop.csproj" />
     <ProjectReference Include="..\WebView\WebView.csproj" />
   </ItemGroup>
 
@@ -16,6 +17,10 @@
     <PackageReference Include="Bogus" Version="35.6.2" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WebApi\" />
   </ItemGroup>
 
 </Project>

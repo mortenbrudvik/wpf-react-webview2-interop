@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using WebView;
+using WebView.Interop;
 using WpfReactApp.UI.Users;
-using WpfReactApp.UI.WebApi;
 
 namespace WpfReactApp.UI;
 
@@ -16,8 +16,9 @@ public class WpfReactAppModule : Module
             .SingleInstance();
 
         // WebView Bridge
-        builder.RegisterType<WebViewApiBridge>().SingleInstance();
-        builder.RegisterType<WebViewEventAggregator>().SingleInstance();
+        builder.RegisterType<ApiBridge>().SingleInstance();
+        builder.RegisterType<ApiEventAggregator>().SingleInstance();
+        builder.RegisterType<ApiRegistry>().SingleInstance();
         
         // Services
         builder.RegisterType<UserService>().AsSelf().SingleInstance();

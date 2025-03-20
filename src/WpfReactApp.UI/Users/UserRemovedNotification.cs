@@ -1,5 +1,5 @@
 using MediatR;
-using WpfReactApp.UI.WebApi;
+using WebView.Interop;
 
 namespace WpfReactApp.UI.Users;
 
@@ -8,7 +8,7 @@ public class UserRemovedNotification(string userId) : INotification
     public string UserId { get; } = userId;
 }
 
-public class UserRemovedEventHandler(WebViewEventAggregator eventAggregator) : INotificationHandler<UserRemovedNotification>
+public class UserRemovedEventHandler(ApiEventAggregator eventAggregator) : INotificationHandler<UserRemovedNotification>
 {
     public Task Handle(UserRemovedNotification notification, CancellationToken cancellationToken)
     {
