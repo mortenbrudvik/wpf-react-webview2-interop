@@ -1,8 +1,7 @@
 ﻿using System.Text.Json;
 using MediatR;
-using WebView;
 
-namespace WpfApp;
+namespace AppUI.WebApi;
 
 // Bridge class to handle API calls from web client.
 public class WebViewApiBridge(IMediator mediator)

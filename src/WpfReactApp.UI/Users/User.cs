@@ -1,4 +1,4 @@
-﻿namespace WpfApp.Users;
+﻿namespace AppUI.Users;
 
 public class User
 {

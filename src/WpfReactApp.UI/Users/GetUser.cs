@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace WpfApp.Users;
+namespace AppUI.Users;
 
 // Request
 public class GetUsersRequest : IRequest<List<User>> { }

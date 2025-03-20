@@ -1,7 +1,8 @@
-﻿using WebView;
+﻿using AppUI.WebApi;
+using WebView;
 using Path = System.IO.Path;
 
-namespace WpfApp;
+namespace AppUI;
 
 public partial class MainWindow
 {
