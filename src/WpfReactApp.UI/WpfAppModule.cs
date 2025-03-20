@@ -23,6 +23,9 @@ public class WpfAppModule : Module
         // Services
         builder.RegisterType<UserService>().AsSelf();
         
+        // ViewModels
+        builder.RegisterType<MainViewModel>().SingleInstance();
+        
         // Views
         builder.RegisterType<MainWindow>().SingleInstance();
     }
