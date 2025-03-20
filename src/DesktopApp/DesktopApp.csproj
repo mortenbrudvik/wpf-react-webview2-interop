@@ -19,4 +19,16 @@
     <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\index.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\index.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

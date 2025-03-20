@@ -1,5 +1,4 @@
 using System.IO;
-using Bogus;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DesktopApp.Common;
@@ -18,14 +17,21 @@ public partial class MainViewModel : ObservableObject
     {
         _userService = userService;
         WebView = webview;
-        
+
+        //var url = "http://localhost:5174/";
+        var hostWebHostNameForFolder = "webapp";
+        var url = "https://webapp/index.html";
+        var hostWebRootFolder = Path.Combine(Environment.CurrentDirectory, "Assets");
         
         var tempPath =  Path.Combine(Path.GetTempPath(), "WpfWebview2Interop");
-        _handler = new WebviewHandler(WebView,  "http://localhost:5174/", tempPath)
+        _handler = new WebviewHandler(WebView,  url, tempPath)
         {
             HostObject = bridge,
             HostObjectName = "apibridge",
             EnableDevTools = true,
+            
+            HostWebRootFolder = hostWebRootFolder,
+            HostWebHostNameForFolder = hostWebHostNameForFolder
         };
     }
 

@@ -27,6 +27,9 @@ public class WebviewHandler
     public object? HostObject { get; init; } = null;
     
     public bool EnableDevTools { get; init; }
+    
+    public string? HostWebRootFolder { get; init; }
+    public string HostWebHostNameForFolder { get; set; } = "https://localweb.com";
 
     public virtual void Navigate(string url, bool forceRefresh = false)
     {
@@ -57,9 +60,16 @@ public class WebviewHandler
         if(EnableDevTools)
             WebView.CoreWebView2.OpenDevToolsWindow();
         
+        // Map local folder to a virtual domain name
+        if (!string.IsNullOrEmpty(HostWebRootFolder))
+        {
+            WebView.CoreWebView2.SetVirtualHostNameToFolderMapping(HostWebHostNameForFolder, HostWebRootFolder, CoreWebView2HostResourceAccessKind.Allow);
+        }
+        
         if (!string.IsNullOrEmpty(InitialUrl))
         {
             Navigate(InitialUrl);
         }
     }
+
 }
