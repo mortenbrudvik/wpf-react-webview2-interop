@@ -1,5 +1,5 @@
 import './App.css'
-import {useUsers} from "./users/useUsers.ts";
+import {useUsers} from "users";
 
 function App() {
 
