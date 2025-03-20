@@ -32,10 +32,18 @@ public partial class MainViewModel : ObservableObject
     public WebViewControl WebView { get; set; }
     
     [RelayCommand]
-    private void AddUser()
+    private async Task AddUser()
     {
         var user = UserGenerator.Create();
         
-        _userService.AddUser(user);
+        await _userService.AddUser(user);
+    }   
+    [RelayCommand]
+    private async Task RemoveUser()
+    {
+        var users = _userService.GetUsers();
+        if(users.Count == 0) return;
+        
+        await _userService.RemoveUser(users[0].Id);
     }
 }
