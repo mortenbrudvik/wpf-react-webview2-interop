@@ -1,11 +1,9 @@
 ﻿// hooks/useUsers.ts
 import { useState, useEffect } from "react";
 import { apiClient } from "../interop/WebviewApiClient";
+import {User} from "../types/User.ts";
 
-interface User {
-    id: number;
-    name: string;
-}
+
 
 export function useUsers() {
     const [users, setUsers] = useState<User[]>([]);

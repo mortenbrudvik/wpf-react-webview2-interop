@@ -16,13 +16,13 @@ public class WebViewApiBridge
     }
 
     // Generic method to handle API calls from React
-    public string InvokeMethod(string serviceName, string methodName, string jsonParams)
+    public async Task<string> InvokeMethod(string serviceName, string methodName, string jsonParams)
     {
         var requestType = ApiRegistry.GetRequestType(serviceName, methodName);
         if (requestType == null) throw new Exception($"Unknown API: {serviceName}.{methodName}");
         
         var request = JsonSerializer.Deserialize(jsonParams, requestType);
-        var result = _mediator.Send(request);
+        var result = await _mediator.Send(request);
         return JsonSerializer.Serialize(result);
     }
 }
