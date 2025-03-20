@@ -2,7 +2,7 @@
 using MediatR.Extensions.Autofac.DependencyInjection;
 using MediatR.Extensions.Autofac.DependencyInjection.Builder;
 
-namespace WpfReactApp.UI;
+namespace DesktopApp;
 
 public class AutofacBootstrapper
 {

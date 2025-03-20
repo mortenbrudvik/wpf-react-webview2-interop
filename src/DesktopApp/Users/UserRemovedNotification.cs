@@ -1,7 +1,7 @@
 using MediatR;
 using WebView.Interop;
 
-namespace WpfReactApp.UI.Users;
+namespace DesktopApp.Users;
 
 public class UserRemovedNotification(string userId) : INotification
 {

@@ -1,7 +1,7 @@
 ﻿using Bogus;
-using WpfReactApp.UI.Users;
+using DesktopApp.Users;
 
-namespace WpfReactApp.UI.Common;
+namespace DesktopApp.Common;
 
 public static class UserGenerator
 {

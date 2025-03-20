@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using Autofac;
+using DesktopApp.Common;
+using DesktopApp.Users;
 using WebView.Interop;
-using WpfReactApp.UI.Common;
-using WpfReactApp.UI.Users;
 
-namespace WpfReactApp.UI;
+namespace DesktopApp;
 
 public partial class App
 {

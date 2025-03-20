@@ -1,9 +1,9 @@
 ﻿using Autofac;
+using DesktopApp.Users;
 using WebView;
 using WebView.Interop;
-using WpfReactApp.UI.Users;
 
-namespace WpfReactApp.UI;
+namespace DesktopApp;
 
 public class WpfReactAppModule : Module
 {

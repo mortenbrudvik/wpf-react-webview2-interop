@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace WpfReactApp.UI.Users;
+namespace DesktopApp.Users;
 
 public class UserService(IMediator mediator)
 {

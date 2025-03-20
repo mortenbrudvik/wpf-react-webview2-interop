@@ -1,4 +1,4 @@
-﻿namespace WpfReactApp.UI;
+﻿namespace DesktopApp;
 
 public partial class MainWindow
 {

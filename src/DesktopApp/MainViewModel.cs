@@ -2,12 +2,12 @@ using System.IO;
 using Bogus;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DesktopApp.Common;
+using DesktopApp.Users;
 using WebView;
 using WebView.Interop;
-using WpfReactApp.UI.Common;
-using WpfReactApp.UI.Users;
 
-namespace WpfReactApp.UI;
+namespace DesktopApp;
 
 public partial class MainViewModel : ObservableObject
 {
