@@ -15,7 +15,7 @@ function App() {
 
     return (
         <>
-            <h1>User List</h1>
+            <h2>User List</h2>
             {loading && <p>Loading users...</p>}
             {error && <p>Error: {error}</p>}
             {!loading && !error && (

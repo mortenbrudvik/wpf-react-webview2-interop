@@ -18,9 +18,15 @@ public partial class MainViewModel : ObservableObject
         _userService = userService;
         WebView = webview;
  
-        //var url = "http://localhost:5174/";
+        
+        #if DEBUG
+                var url = "http://localhost:5223/";
+        #else
+                var url = "https://webapp/index.html";
+        #endif
+        
+        
         var hostWebHostNameForFolder = "webapp";
-        var url = "https://webapp/index.html";
         var hostWebRootFolder = Path.Combine(Environment.CurrentDirectory, "Assets");
         
         var tempPath =  Path.Combine(Path.GetTempPath(), "WpfWebview2Interop");
