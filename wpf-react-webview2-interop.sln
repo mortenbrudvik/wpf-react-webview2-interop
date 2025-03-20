@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView.Interop", "src\WebView.Interop\WebView.Interop.csproj", "{B141DA10-83F0-4A1D-914B-316AE9A44DF7}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "WebApp", "src\WebApp\WebApp.esproj", "{5B195363-25AA-4491-84CC-48F28FE532FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,12 @@ Global
 		{B141DA10-83F0-4A1D-914B-316AE9A44DF7}.Release|x64.Build.0 = Release|Any CPU
 		{B141DA10-83F0-4A1D-914B-316AE9A44DF7}.Release|x86.ActiveCfg = Release|Any CPU
 		{B141DA10-83F0-4A1D-914B-316AE9A44DF7}.Release|x86.Build.0 = Release|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Release|x64.ActiveCfg = Release|Any CPU
+		{5B195363-25AA-4491-84CC-48F28FE532FE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +88,6 @@ Global
 		{88F9D92B-7EB8-4D5D-A7AF-EC471ECF1C16} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{C6CD8C59-B463-4E5F-8909-8279F7A2420E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{B141DA10-83F0-4A1D-914B-316AE9A44DF7} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{5B195363-25AA-4491-84CC-48F28FE532FE} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal

@@ -6,19 +6,19 @@ using WpfReactApp.UI.Users;
 
 namespace WpfReactApp.UI;
 
-public partial class App : Application
+public partial class App
 {
-    private IContainer _container;
+    private IContainer? _container;
 
-    protected override void OnStartup(StartupEventArgs e)
+    protected async override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
         
         _container = AutofacBootstrapper.Bootstrap();
 
         var userService = _container.Resolve<UserService>();
-        userService.AddUser(UserGenerator.Create());
-        userService.AddUser(UserGenerator.Create());
+        await userService.AddUser(UserGenerator.Create());
+        await userService.AddUser(UserGenerator.Create());
 
         // Register API
         var registry = _container.Resolve<ApiRegistry>();
