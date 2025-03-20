@@ -14,6 +14,10 @@ public partial class App : Application
         base.OnStartup(e);
         
         _container = AutofacBootstrapper.Bootstrap();
+
+        var userService = _container.Resolve<UserService>();
+        userService.AddUser(new User {Id = "1", Name = "John"});
+        userService.AddUser(new User {Id = "2", Name = "David"});
         
         ApiRegistry.Register<GetUsersRequest>("userService", "getUsers");
         

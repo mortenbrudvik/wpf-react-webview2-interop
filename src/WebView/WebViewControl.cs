@@ -6,6 +6,6 @@ public class WebViewControl : WebView2, IWebViewInterop
 {
     public void PostWebMessageAsJson(string message)
     {
-        CoreWebView2.PostWebMessageAsJson(message);
+        CoreWebView2?.PostWebMessageAsJson(message);
     }
 }

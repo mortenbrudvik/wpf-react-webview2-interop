@@ -1,10 +1,25 @@
+using WpfReactApp.UI.WebApi;
+
 namespace WpfReactApp.UI.Users;
 
-public class UserService
+public class UserService(EventAggregator eventAggregator)
 {
-    public List<User> GetUsers() => new List<User>
+    private readonly List<User> _users = [];
+    public List<User> GetUsers() => _users;
+
+    public void AddUser(User user)
     {
-        new User { Id = "1", Name = "John" },
-        new User { Id = "2", Name = "Jane" }
-    };
+        _users.Add(user);
+        eventAggregator.Publish("userService.userAdded", user);
+    }
+
+    public void RemoveUser(string userId)
+    {
+        var user = _users.FirstOrDefault(u => u.Id == userId);
+        if (user != null)
+        {
+            _users.Remove(user);
+            eventAggregator.Publish("userService.userRemoved", userId);
+        }
+    }
 }
