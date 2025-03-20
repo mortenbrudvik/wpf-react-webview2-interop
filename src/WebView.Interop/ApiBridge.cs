@@ -11,8 +11,8 @@ public class ApiBridge(IMediator mediator, ApiRegistry apiRegistry)
     {
         var requestType = apiRegistry.GetRequestType(serviceName, methodName);
         if (requestType == null) throw new Exception($"Unknown API: {serviceName}.{methodName}");
-        
-        var request = JsonSerializer.Deserialize(jsonParams, requestType);
+
+        var request = JsonUtils.Deserialize(jsonParams, requestType);
         
         if (request == null) throw new Exception($"Invalid API params: {jsonParams}");
         

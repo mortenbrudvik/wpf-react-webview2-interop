@@ -8,6 +8,8 @@ public class UserService(IMediator mediator)
 
     public List<User> GetUsers() => _users;
 
+    public User? GetUser(string id) => _users.FirstOrDefault(u => u.Id == id);
+    
     public async Task AddUser(User user)
     {
         _users.Add(user);

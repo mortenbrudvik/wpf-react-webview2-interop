@@ -23,6 +23,7 @@ public partial class App
         // Register API
         var registry = _container.Resolve<ApiRegistry>();
         registry.Register<GetUsersRequest>("userService", "getUsers");
+        registry.Register<GetUserRequest>("userService", "getUser");
         
         // Create and show main window
         var scope = _container.BeginLifetimeScope();

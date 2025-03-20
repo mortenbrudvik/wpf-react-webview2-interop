@@ -2,17 +2,15 @@
 
 namespace WpfReactApp.UI.Users;
 
-// Request
-public class GetUsersRequest : IRequest<List<User>> { }
-
-// Handler
-public class GetUsersHandler : IRequestHandler<GetUsersRequest, List<User>>
+public class GetUserRequest(string id) : IRequest<User?>
 {
-    private readonly UserService _userService;
-    public GetUsersHandler(UserService userService) => _userService = userService;
+    public string Id { get; set; } = id; // Add setter
+}
 
-    public Task<List<User>> Handle(GetUsersRequest request, CancellationToken ct)
+public class GetUserHandler(UserService userService) : IRequestHandler<GetUserRequest, User?>
+{
+    public Task<User?> Handle(GetUserRequest request, CancellationToken ct)
     {
-        return Task.FromResult(_userService.GetUsers());
+        return Task.FromResult(userService.GetUser(request.Id));
     }
 }

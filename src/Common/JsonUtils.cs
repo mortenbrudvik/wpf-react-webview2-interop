@@ -14,9 +14,17 @@ public static class JsonUtils
     {
         JsonSerializerOptions options = new()
         {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase, // Ensures camelCase for property names
-            PropertyNameCaseInsensitive = true // Optional: allows case-insensitive deserialization
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
         };
         return JsonSerializer.Serialize(dataObj, options);
+    }
+    
+    public static object? Deserialize(string jsonParams, Type requestType)
+    {
+        return JsonSerializer.Deserialize(jsonParams, requestType, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true 
+        });
     }
 }
