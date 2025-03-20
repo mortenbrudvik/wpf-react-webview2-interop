@@ -18,7 +18,8 @@ public partial class MainViewModel : ObservableObject
         _handler = new WebviewHandler(WebView,  "http://localhost:5174/", tempPath)
         {
             HostObject = bridge,
-            HostObjectName = "apibridge"
+            HostObjectName = "apibridge",
+            EnableDevTools = true,
         };
     }
 

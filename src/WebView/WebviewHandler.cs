@@ -25,6 +25,8 @@ public class WebviewHandler
     
     public string HostObjectName { get; init; } = "webview";
     public object? HostObject { get; init; } = null;
+    
+    public bool EnableDevTools { get; init; }
 
     public virtual void Navigate(string url, bool forceRefresh = false)
     {
@@ -51,6 +53,9 @@ public class WebviewHandler
                 WebView.CoreWebView2.AddHostObjectToScript(HostObjectName, HostObject);
             });
         }
+        
+        if(EnableDevTools)
+            WebView.CoreWebView2.OpenDevToolsWindow();
         
         if (!string.IsNullOrEmpty(InitialUrl))
         {
