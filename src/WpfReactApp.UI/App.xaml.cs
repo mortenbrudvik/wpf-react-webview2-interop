@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Autofac;
+using WpfReactApp.UI.Common;
 using WpfReactApp.UI.Users;
 using WpfReactApp.UI.WebApi;
 
@@ -16,8 +17,8 @@ public partial class App : Application
         _container = AutofacBootstrapper.Bootstrap();
 
         var userService = _container.Resolve<UserService>();
-        userService.AddUser(new User {Id = "1", Name = "John"});
-        userService.AddUser(new User {Id = "2", Name = "David"});
+        userService.AddUser(UserGenerator.Create());
+        userService.AddUser(UserGenerator.Create());
         
         ApiRegistry.Register<GetUsersRequest>("userService", "getUsers");
         
